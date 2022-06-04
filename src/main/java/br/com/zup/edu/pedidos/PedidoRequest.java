@@ -22,8 +22,9 @@ public class PedidoRequest {
     private ItemDePedidoRequest item;
 
     public Pedido toModel(Produto produto) {
-        Pedido pedido = new Pedido(numero, total, item.toModel(produto));
-        pedido.adicionaPedido();
+        ItemDePedido itemDePedido = item.toModel(produto);
+        Pedido pedido = new Pedido(numero, total, itemDePedido);
+        pedido.adicionaPedido(itemDePedido);
         return pedido;
     }
 

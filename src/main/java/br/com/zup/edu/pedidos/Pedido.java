@@ -32,7 +32,8 @@ public class Pedido {
         return id;
     }
 
-    public void adicionaPedido() {
-        itens.stream().forEach(itemDePedido -> itemDePedido.setPedido(this));
+    public void adicionaPedido(ItemDePedido itemDePedido) {
+        itemDePedido.setPedido(this);
+        itens.add(itemDePedido);
     }
 }
