@@ -1,7 +1,9 @@
-package br.com.zup.edu.pedidos;
+package br.com.zup.edu.pedidos.dto;
 
-import javax.persistence.Column;
-import javax.persistence.Embedded;
+import br.com.zup.edu.pedidos.dto.EnderecoRequest;
+import br.com.zup.edu.pedidos.model.Pessoa;
+import br.com.zup.edu.pedidos.model.Sexo;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;

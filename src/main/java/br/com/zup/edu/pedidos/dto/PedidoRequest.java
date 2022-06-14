@@ -1,14 +1,10 @@
-package br.com.zup.edu.pedidos;
+package br.com.zup.edu.pedidos.dto;
 
-import javax.persistence.CascadeType;
-import javax.persistence.OneToMany;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
+import br.com.zup.edu.pedidos.model.ItemDePedido;
+import br.com.zup.edu.pedidos.model.Pedido;
+import br.com.zup.edu.pedidos.model.Produto;
+
 import javax.validation.constraints.NotNull;
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class PedidoRequest {
 

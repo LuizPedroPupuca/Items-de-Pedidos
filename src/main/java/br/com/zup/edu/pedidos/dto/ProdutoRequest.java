@@ -1,4 +1,6 @@
-package br.com.zup.edu.pedidos;
+package br.com.zup.edu.pedidos.dto;
+
+import br.com.zup.edu.pedidos.model.Produto;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;

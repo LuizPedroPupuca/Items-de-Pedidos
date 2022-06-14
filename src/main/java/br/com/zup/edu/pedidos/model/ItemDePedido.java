@@ -1,4 +1,4 @@
-package br.com.zup.edu.pedidos;
+package br.com.zup.edu.pedidos.model;
 
 import javax.persistence.*;
 
@@ -16,6 +16,7 @@ public class ItemDePedido {
     @ManyToOne
     private Produto produto;
 
+    @Column(nullable = false)
     private Integer quantidade;
 
     @ManyToOne

@@ -1,4 +1,4 @@
-package br.com.zup.edu.pedidos;
+package br.com.zup.edu.pedidos.model;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;

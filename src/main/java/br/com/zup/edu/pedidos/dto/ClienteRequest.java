@@ -1,7 +1,7 @@
-package br.com.zup.edu.pedidos;
+package br.com.zup.edu.pedidos.dto;
 
-import javax.persistence.Column;
-import javax.persistence.Embedded;
+import br.com.zup.edu.pedidos.model.Cliente;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 

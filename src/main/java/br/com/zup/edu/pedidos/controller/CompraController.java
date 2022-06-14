@@ -1,15 +1,12 @@
-package br.com.zup.edu.pedidos;
+package br.com.zup.edu.pedidos.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
+import br.com.zup.edu.pedidos.service.CompraService;
+import br.com.zup.edu.pedidos.dto.ItemDePedidoRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.validation.Valid;
-import java.net.URI;
-import java.util.List;
 
 @RestController
 public class CompraController {
@@ -35,5 +32,10 @@ public class CompraController {
     @PatchMapping("/clientes/{idCliente}/pedidos/{idPedido}")
     ResponseEntity<Void> finalizaCompra(@PathVariable Long idCliente,@PathVariable Long idPedido){
         return compraService.encerraCompra(idCliente, idPedido);
+    }
+
+    @GetMapping("/{idCliente}")
+    ResponseEntity<?> listaPedidosFinalizados(@PathVariable Long idCliente){
+        return compraService.buscaPedidosFinalizados(idCliente);
     }
 }

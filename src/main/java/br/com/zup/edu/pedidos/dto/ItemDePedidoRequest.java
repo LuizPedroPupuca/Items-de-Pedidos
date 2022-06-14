@@ -1,9 +1,9 @@
-package br.com.zup.edu.pedidos;
+package br.com.zup.edu.pedidos.dto;
 
-import javax.persistence.ManyToOne;
-import javax.validation.constraints.NotBlank;
+import br.com.zup.edu.pedidos.model.ItemDePedido;
+import br.com.zup.edu.pedidos.model.Produto;
+
 import javax.validation.constraints.NotNull;
-import java.util.List;
 
 public class ItemDePedidoRequest {
 

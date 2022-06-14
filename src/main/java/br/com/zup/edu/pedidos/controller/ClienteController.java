@@ -1,5 +1,9 @@
-package br.com.zup.edu.pedidos;
+package br.com.zup.edu.pedidos.controller;
 
+import br.com.zup.edu.pedidos.service.ClienteService;
+import br.com.zup.edu.pedidos.model.Cliente;
+import br.com.zup.edu.pedidos.repository.ClienteRepository;
+import br.com.zup.edu.pedidos.dto.ClienteRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,13 +20,11 @@ import java.net.URI;
 public class ClienteController {
 
     @Autowired
-    private ClienteRepository repository;
+    private ClienteService clienteService;
+
 
     @PostMapping
     public ResponseEntity<Void> cadastrar(@RequestBody @Valid ClienteRequest request, UriComponentsBuilder uri){
-        Cliente cliente = request.toModel();
-        repository.save(cliente);
-        URI location = uri.path("/clientes/{id}").buildAndExpand(cliente.getId()).toUri();
-        return ResponseEntity.created(location).build();
+        return clienteService.salva(request, uri);
     }
 }

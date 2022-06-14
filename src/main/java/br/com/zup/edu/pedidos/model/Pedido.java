@@ -1,6 +1,4 @@
-package br.com.zup.edu.pedidos;
-
-import org.springframework.web.server.ResponseStatusException;
+package br.com.zup.edu.pedidos.model;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -73,5 +71,13 @@ public class Pedido {
     @Override
     public int hashCode() {
         return Objects.hash(id, total, itens, status, cliente);
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public List<ItemDePedido> getItens() {
+        return itens;
     }
 }

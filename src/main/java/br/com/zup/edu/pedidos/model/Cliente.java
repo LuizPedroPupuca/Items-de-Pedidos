@@ -1,6 +1,4 @@
-package br.com.zup.edu.pedidos;
-
-import org.hibernate.cache.spi.support.AbstractReadWriteAccess;
+package br.com.zup.edu.pedidos.model;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;

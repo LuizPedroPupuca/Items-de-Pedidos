@@ -1,6 +1,8 @@
-package br.com.zup.edu.pedidos;
+package br.com.zup.edu.pedidos.dto;
 
-import javax.persistence.Column;
+import br.com.zup.edu.pedidos.model.Endereco;
+import br.com.zup.edu.pedidos.model.Lougradouro;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
