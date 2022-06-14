@@ -1,9 +1,7 @@
 package br.com.zup.edu.pedidos;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 public class Produto {
@@ -12,10 +10,15 @@ public class Produto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false, unique = true)
     private String titulo;
 
-    public Produto(String titulo) {
+    @Column(nullable = false)
+    private BigDecimal valor;
+
+    public Produto(String titulo, BigDecimal valor) {
         this.titulo = titulo;
+        this.valor = valor;
     }
 
     @Deprecated
@@ -24,5 +27,9 @@ public class Produto {
 
     public Long getId() {
         return id;
+    }
+
+    public BigDecimal getValor() {
+        return valor;
     }
 }

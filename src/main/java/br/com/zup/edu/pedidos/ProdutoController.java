@@ -22,6 +22,9 @@ public class ProdutoController {
 
     @PostMapping
     public ResponseEntity<Void> cadastra(@RequestBody @Valid ProdutoRequest produtoRequest, UriComponentsBuilder uri){
+        if(produtoRepository.existsByTitulo(produtoRequest.getTitulo())){
+            return ResponseEntity.unprocessableEntity().build();
+        }
         Produto produto = produtoRequest.toModel();
         produtoRepository.save(produto);
 

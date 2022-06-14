@@ -3,6 +3,10 @@ package br.com.zup.edu.pedidos;
 import javax.persistence.*;
 
 @Entity
+@Table(uniqueConstraints = {
+        @UniqueConstraint(name = "Unique_item_produto_pedido"
+                , columnNames = {"produto_id", "pedido_id"})
+})
 public class ItemDePedido {
 
     @Id
@@ -31,5 +35,13 @@ public class ItemDePedido {
 
     public void setPedido(Pedido pedido) {
         this.pedido = pedido;
+    }
+
+    public Integer getQuantidade() {
+        return quantidade;
+    }
+
+    public Produto getProduto() {
+        return produto;
     }
 }

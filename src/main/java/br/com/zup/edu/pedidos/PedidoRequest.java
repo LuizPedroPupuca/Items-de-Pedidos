@@ -12,28 +12,15 @@ import java.util.stream.Collectors;
 
 public class PedidoRequest {
 
-    @NotBlank
-    private String numero;
-
-    @NotNull
-    private BigDecimal total;
 
     @NotNull
     private ItemDePedidoRequest item;
 
     public Pedido toModel(Produto produto) {
         ItemDePedido itemDePedido = item.toModel(produto);
-        Pedido pedido = new Pedido(numero, total, itemDePedido);
-        pedido.adicionaPedido(itemDePedido);
+        Pedido pedido = new Pedido();
+        pedido.adicionaItensDePedido(itemDePedido);
         return pedido;
-    }
-
-    public String getNumero() {
-        return numero;
-    }
-
-    public BigDecimal getTotal() {
-        return total;
     }
 
     public ItemDePedidoRequest getItem() {

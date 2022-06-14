@@ -1,14 +1,20 @@
 package br.com.zup.edu.pedidos;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 
 public class ProdutoRequest {
 
     @NotBlank
     private String titulo;
 
-    public ProdutoRequest(String titulo) {
+    @NotNull
+    private BigDecimal valor;
+
+    public ProdutoRequest(String titulo, BigDecimal valor) {
         this.titulo = titulo;
+        this.valor = valor;
     }
 
     public ProdutoRequest() {
@@ -18,8 +24,11 @@ public class ProdutoRequest {
         return titulo;
     }
 
+    public BigDecimal getValor() {
+        return valor;
+    }
 
     public Produto toModel() {
-        return new Produto(titulo);
+        return new Produto(titulo, valor);
     }
 }
